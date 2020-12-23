@@ -2,7 +2,7 @@ const React = require('react');
 const {pipeToNodeWritable} = require('react-server-dom-webpack/writer.node.server');
 
 const App = (props) => {
-    return React.createElement('h1', null, "Hello, Server World!")
+    return React.createElement('h2', null, "Hello, Server World!")
 }
 
 class Writer {
