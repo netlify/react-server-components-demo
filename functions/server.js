@@ -1,9 +1,6 @@
-const React = require('react');
-const {pipeToNodeWritable} = require('react-server-dom-webpack/writer.node.server');
-
-const App = (props) => {
-    return React.createElement('h2', null, "Hello, Server World!")
-}
+import React from 'react';
+import {pipeToNodeWritable} from 'react-server-dom-webpack/writer.node.server';
+import App from '../src/App.server';
 
 class Writer {
     constructor() {
@@ -12,7 +9,6 @@ class Writer {
         this.handlers = {}
     }
     write(s) {
-        console.log("Pushing")
         this.buffer.push(s.toString())
     }
     end() {
@@ -31,12 +27,14 @@ class Writer {
 
 exports.handler = async function(event, context) {
     const writer = new Writer;
+    const props = JSON.parse(event.queryStringParameters.props);
+    
     return new Promise((resolve, reject) => {
         writer.on('done', (result) => resolve({
             statusCode: 200,
             body: result,
-            headers: {'Content-Type': 'application/text'}
+            headers: {'Content-Type': 'application/text', 'X-Props': JSON.stringify(props)}
         }))
-        pipeToNodeWritable(React.createElement(App, {}), writer, {})
+        pipeToNodeWritable(React.createElement(App, props), writer, {})
     })
 }
