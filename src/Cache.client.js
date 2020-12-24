@@ -20,15 +20,15 @@ export function useRefresh() {
   };
 }
 
-export function useServerResponse(location) {
-  const key = JSON.stringify(location);
+export function useServerResponse(props) {
+  const key = JSON.stringify(props);
   const cache = unstable_getCacheForType(createResponseCache);
   let response = cache.get(key);
   if (response) {
     return response;
   }
   response = createFromFetch(
-    fetch('/.netlify/functions/server')
+    fetch('/.netlify/functions/server?props=' + encodeURIComponent(key))
   );
   cache.set(key, response);
   return response;

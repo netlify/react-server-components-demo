@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && cp public/index.html dist/"
+    "build": "webpack && netlify-lambda build functions && cp public/index.html dist/",
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
+    "netlify-lambda": "^2.0.2",
     "react": "0.0.0-experimental-3310209d0",
     "react-dom": "0.0.0-experimental-3310209d0",
     "react-server-dom-webpack": "0.0.0-experimental-3310209d0",
-    "webpack": "^5.11.0"
+    "webpack": "^5.11.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.10",
