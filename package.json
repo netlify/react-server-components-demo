@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && netlify-lambda build functions && cp public/index.html dist/",
-    "serve": "webpack serve"
+    "build": "NODE_ENV=development webpack && NODE_ENV=development netlify-lambda build functions --config webpack.functions.config.js && cp public/index.html dist/",
+    "build:prod": "NODE_ENV=production webpack && NODE_ENV=production netlify-lambda build functions --config webpack.functions.config.js && cp public/index.html dist/",
+    "serve": "NODE_ENV=development webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +16,20 @@
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "date-fns": "^2.16.1",
+    "excerpts": "0.0.3",
+    "marked": "^1.2.7",
     "netlify-lambda": "^2.0.2",
+    "pg": "^8.5.1",
     "react": "0.0.0-experimental-3310209d0",
     "react-dom": "0.0.0-experimental-3310209d0",
+    "react-error-boundary": "^3.1.0",
+    "react-fetch": "0.0.0-experimental-3310209d0",
+    "react-fs": "0.0.0-experimental-3310209d0",
+    "react-pg": "0.0.0-experimental-3310209d0",
     "react-server-dom-webpack": "0.0.0-experimental-3310209d0",
+    "sanitize-html": "^2.3.0",
     "webpack": "^5.11.0",
     "webpack-dev-server": "^3.11.0"
   },

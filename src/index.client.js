@@ -1,21 +1,14 @@
-import React, {Suspense} from 'react';
-import ReactDOM from 'react-dom';
-import {useServerResponse} from './Cache.client';
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
 
-const title = 'React Server Components on Netlify';
- 
-const Message = (props) => {
-    const response = useServerResponse(props)
-    return response.readRoot()
-}
+import {unstable_createRoot} from 'react-dom';
+import Root from './Root.client';
 
-ReactDOM.render(
-    <Suspense fallback={<div>Loading...</div>}>
-    <div>
-        <h1>{title}</h1>
-        <Message name="World" />
-        <Message name="Server" />
-    </div>
-    </Suspense>,
-  document.getElementById('app')
-);
+const initialCache = new Map();
+const root = unstable_createRoot(document.getElementById('root'));
+root.render(<Root initialCache={initialCache} />);

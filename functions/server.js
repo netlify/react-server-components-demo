@@ -1,6 +1,8 @@
 import React from 'react';
 import {pipeToNodeWritable} from 'react-server-dom-webpack/writer.node.server';
 import App from '../src/App.server';
+import {readFileSync} from 'fs';
+import moduleMap from '../client-manifest.json';
 
 class Writer {
     constructor() {
@@ -27,14 +29,14 @@ class Writer {
 
 exports.handler = async function(event, context) {
     const writer = new Writer;
-    const props = JSON.parse(event.queryStringParameters.props);
-    
+    const location = JSON.parse(event.queryStringParameters.location); 
+
     return new Promise((resolve, reject) => {
         writer.on('done', (result) => resolve({
             statusCode: 200,
             body: result,
-            headers: {'Content-Type': 'application/text', 'X-Props': JSON.stringify(props)}
+            headers: {'Content-Type': 'application/text', 'X-Location': JSON.stringify(location)}
         }))
-        pipeToNodeWritable(React.createElement(App, props), writer, {})
+        pipeToNodeWritable(React.createElement(App, props), writer, moduleMap)
     })
 }

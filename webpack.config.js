@@ -1,5 +1,6 @@
 const path = require('path');
- 
+const ReactServerWebpackPlugin = require('react-server-dom-webpack/plugin');
+
 module.exports = {
   entry: path.resolve(__dirname, './src/index.client.js'),
   module: {
@@ -12,7 +13,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx']
   },
   output: {
     path: path.resolve(__dirname, './dist'),
