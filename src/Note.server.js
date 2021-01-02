@@ -16,7 +16,7 @@ import NoteEditor from './NoteEditor.client';
 export default function Note({selectedId, isEditing}) {
   const note =
     selectedId != null
-      ? fetch(`http://localhost:4000/notes/${selectedId}`).json()
+      ? fetch(`${process.env.URL}/notes/${selectedId}`).json()
       : null;
 
   if (note === null) {

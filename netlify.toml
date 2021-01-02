@@ -12,3 +12,9 @@
     targetPort = 8080
     framework = "#custom"
     environment = { BABEL_ENV = "dev" }
+
+[[redirects]]
+    from = "/notes/*"
+    to = "/.netlify/functions/notes"
+    status = 200
+    force = true
