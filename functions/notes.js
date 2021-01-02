@@ -1,6 +1,7 @@
 const {Pool} = require('pg');
 
 function response(body, status) {
+    console.log("Sending response: ", body, status || 200)
     return {
         statusCode: status || 200,
         body: body,
