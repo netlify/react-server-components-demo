@@ -1,4 +1,5 @@
-const {Pool} = require('pg');
+import {Pool} from 'pg';
+import serverComponent from '../src/lib/server-component';
 
 function response(body, status) {
     console.log("Sending response: ", body, status || 200)
@@ -20,6 +21,8 @@ exports.handler = async function(event, context) {
         }
     }
 
+    const location = event.queryStringParameters.location && JSON.parse(event.queryStringParameters.location);
+
     try {
         const noteId = match[1];
         const now = new Date();
@@ -37,11 +40,12 @@ exports.handler = async function(event, context) {
                 if (noteId) {
                     return response(JSON.stringify({error: "Method not allowed"}), 405)
                 }
-                await pool.query(
+                const result = await pool.query(
                     'insert into notes (title, body, created_at, updated_at) values ($1, $2, $3, $3) returning id',
                     [data.title, data.body, now]
                 ); 
-                return response(JSON.stringify(data), 200)
+                const insertedId = result.rows[0].id;
+                return serverComponent(location, insertedId)
             case 'PUT':
                 if (!noteId) {
                     return response(JSON.stringify({error: "Method not allowed"}), 405)
@@ -51,10 +55,10 @@ exports.handler = async function(event, context) {
                     'update notes set title = $1, body = $2, updated_at = $3 where id = $4',
                     [data.title, data.body, now, updatedId]
                 );
-                return response(JSON.stringify(data), 200)
+                return serverComponent(location, null)
             case 'DELETE':
                 await pool.query('delete from notes where id = $1', [noteId]);
-                return response('{}', 200)
+                return serverComponent(location, null)
         }
     } catch(err) {
         console.log(err);
