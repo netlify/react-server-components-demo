@@ -26,8 +26,6 @@ exports.handler = async function(event, context) {
     const writer = new streams.WritableStream();
     const location = JSON.parse(event.queryStringParameters.location);
 
-    console.log("Rendering server side - notes API at", process.env)
-
     return new Promise((resolve, reject) => {
         writer.on('finish', () => resolve({
             statusCode: 200,

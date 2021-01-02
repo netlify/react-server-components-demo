@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-        'API_ENDPOINT': `"${process.env.DEPLOY_PRIME_URL || process.env.URL}"`
+        'API_ENDPOINT': `"${process.env.DEPLOY_PRIME_URL || process.env.URL || "http://localhost:8888"}"`
     })
   ],
   resolve: {
