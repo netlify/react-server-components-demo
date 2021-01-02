@@ -17,5 +17,12 @@ module.exports = {
         'API_ENDPOINT': `"${process.env.DEPLOY_PRIME_URL || process.env.URL || "http://localhost:8888"}"`,
         'BASE_DIR': `"${__dirname}"`
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+    alias: {
+        'pg-native': path.join(__dirname, 'aliases/pg-native.js'),
+        'pgpass$': path.join(__dirname, 'aliases/pgpass.js'),
+      },
+  },
 };
