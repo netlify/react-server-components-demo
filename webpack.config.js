@@ -8,18 +8,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg|ico)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
@@ -34,7 +22,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "public/*.{svg,ico}"), to: "[name].[ext]", toType: "template"
+          from: path.resolve(__dirname, "public/*.{svg,ico,css}"), to: "[name].[ext]", toType: "template"
         }
       ],
     }),

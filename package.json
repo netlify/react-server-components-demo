@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:client": "webpack",
-    "build:functions": "netlify-lambda build functions --config webpack.functions.config.js",
-    "build": "npm run build:client && npm run build:functions",
-    "serve": "NODE_ENV=development webpack serve"
+    "build": "webpack && netlify-lambda build functions --config webpack.functions.config.js",
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "",

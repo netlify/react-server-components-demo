@@ -4,6 +4,8 @@ import {pipeToNodeWritable} from 'react-server-dom-webpack/writer.node.server';
 import App from '../src/App.server';
 import moduleMap_ from '../dist/react-client-manifest.json'
 
+process.env.DEPLOY_PRIME_URL = process.env.DEPLOY_PRIME_URL || process.env.URL
+
 const manifest = {}
 const componentRegex = /src\/.+\.js/
 
@@ -25,8 +27,6 @@ const moduleMap = new Proxy(manifest, {
 exports.handler = async function(event, context) {
     const writer = new streams.WritableStream();
     const location = JSON.parse(event.queryStringParameters.location);
-
-    console.log("Notes URL: ", process.env.URL + "/notes")
 
     return new Promise((resolve, reject) => {
         writer.on('finish', () => resolve({

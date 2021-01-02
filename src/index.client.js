@@ -8,7 +8,6 @@
 
 import {unstable_createRoot} from 'react-dom';
 import Root from './Root.client';
-import '../public/style.css';
 
 const initialCache = new Map();
 const root = unstable_createRoot(document.getElementById('root'));
