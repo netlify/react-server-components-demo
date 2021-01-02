@@ -4,14 +4,15 @@
     functions = "lambda"
 
 [context.production]
-    environment = { BABEL_ENV = "production" }
+    command = "npm run build:prod"
+    environment = { NODE_ENV = "production" }
 
 [dev]
     command = "npm run serve"
     port = 8888
     targetPort = 8080
     framework = "#custom"
-    environment = { BABEL_ENV = "dev" }
+    environment = { NODE_ENV = "dev" }
 
 [[redirects]]
     from = "/notes/*"

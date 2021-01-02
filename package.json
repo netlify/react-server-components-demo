@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=development webpack && NODE_ENV=development netlify-lambda build functions --config webpack.functions.config.js && cp public/index.html dist/",
-    "build:prod": "NODE_ENV=production webpack && NODE_ENV=production netlify-lambda build functions --config webpack.functions.config.js && cp public/index.html dist/",
+    "build:client": "webpack",
+    "build:functions": "netlify-lambda build functions --config webpack.functions.config.js",
+    "build": "npm run build:client && npm run build:functions",
     "serve": "NODE_ENV=development webpack serve"
   },
   "keywords": [],
