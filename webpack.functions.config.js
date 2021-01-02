@@ -1,5 +1,6 @@
 const path = require("path")
 const webpack = require("webpack")
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   module: {
@@ -17,5 +18,6 @@ module.exports = {
         'API_ENDPOINT': `"${process.env.DEPLOY_PRIME_URL || process.env.URL || "http://localhost:8888"}"`,
         'BASE_DIR': `"${__dirname}"`
     })
-  ]
+  ],
+  externals: [nodeExternals()]
 };

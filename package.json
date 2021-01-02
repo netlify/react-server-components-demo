@@ -37,7 +37,8 @@
     "sanitize-html": "^2.3.0",
     "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^2.5.2"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.10",
