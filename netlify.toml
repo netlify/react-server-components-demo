@@ -4,9 +4,6 @@
     functions = "lambda"
     environment = { NODE_ENV = "production" }
 
-[context.production]
-    command = "npm run build:prod"
-
 [dev]
     command = "npm run serve"
     port = 8888

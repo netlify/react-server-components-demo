@@ -26,6 +26,8 @@ exports.handler = async function(event, context) {
     const writer = new streams.WritableStream();
     const location = JSON.parse(event.queryStringParameters.location);
 
+    console.log("Notes URL: ", process.env.URL + "/notes")
+
     return new Promise((resolve, reject) => {
         writer.on('finish', () => resolve({
             statusCode: 200,
