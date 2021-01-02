@@ -10,7 +10,7 @@ import {fetch} from 'react-fetch';
 import SidebarNote from './SidebarNote';
 
 export default function NoteList({searchText}) {
-  const notes = fetch(`${process.env.DEPLOY_PRIME_URL}/notes`).json();
+  const notes = fetch(`${API_ENDPOINT}/notes`).json();
 
   return notes.length > 0 ? (
     <ul className="notes-list">

@@ -1,5 +1,5 @@
 const path = require("path")
-const ReactServerWebpackPlugin = require('react-server-dom-webpack/plugin');
+const webpack = require("webpack")
 
 module.exports = {
   module: {
@@ -12,6 +12,11 @@ module.exports = {
         },
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+        'API_ENDPOINT': `"${process.env.DEPLOY_PRIME_URL || process.env.URL}"`
+    })
+  ],
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
