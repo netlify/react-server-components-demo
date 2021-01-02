@@ -2,17 +2,17 @@
     command = "npm run build"
     publish = "dist"
     functions = "lambda"
+    environment = { NODE_ENV = "production" }
 
 [context.production]
     command = "npm run build:prod"
-    environment = { NODE_ENV = "production" }
 
 [dev]
     command = "npm run serve"
     port = 8888
     targetPort = 8080
     framework = "#custom"
-    environment = { NODE_ENV = "dev" }
+    environment = { NODE_ENV = "development" }
 
 [[redirects]]
     from = "/notes/*"
