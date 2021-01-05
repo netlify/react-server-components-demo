@@ -2,9 +2,17 @@
     command = "npm run build"
     publish = "dist"
     functions = "lambda"
+    # environment = { NODE_ENV = "production" }
 
 [dev]
     command = "npm run serve"
     port = 8888
     targetPort = 8080
     framework = "#custom"
+    # environment = { NODE_ENV = "development" }
+
+[[redirects]]
+    from = "/notes/*"
+    to = "/.netlify/functions/notes"
+    status = 200
+    force = true

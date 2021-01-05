@@ -1,0 +1,196 @@
+{
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/Cache.client.js": {
+      "": {
+        "id": "./src/Cache.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/Cache.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "*"
+      },
+      "useRefresh": {
+        "id": "./src/Cache.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "useRefresh"
+      },
+      "useServerResponse": {
+        "id": "./src/Cache.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "useServerResponse"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/LocationContext.client.js": {
+      "": {
+        "id": "./src/LocationContext.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/LocationContext.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "*"
+      },
+      "LocationContext": {
+        "id": "./src/LocationContext.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "LocationContext"
+      },
+      "useLocation": {
+        "id": "./src/LocationContext.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "useLocation"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/Root.client.js": {
+      "": {
+        "id": "./src/Root.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/Root.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "*"
+      },
+      "default": {
+        "id": "./src/Root.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "default"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/index.client.js": {
+      "": {
+        "id": "./src/index.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/index.client.js",
+        "chunks": [
+          "main"
+        ],
+        "name": "*"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/EditButton.client.js": {
+      "": {
+        "id": "./src/EditButton.client.js",
+        "chunks": [
+          "client1"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/EditButton.client.js",
+        "chunks": [
+          "client1"
+        ],
+        "name": "*"
+      },
+      "default": {
+        "id": "./src/EditButton.client.js",
+        "chunks": [
+          "client1"
+        ],
+        "name": "default"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/NoteEditor.client.js": {
+      "": {
+        "id": "./src/NoteEditor.client.js",
+        "chunks": [
+          "vendors~client3",
+          "client3"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/NoteEditor.client.js",
+        "chunks": [
+          "vendors~client3",
+          "client3"
+        ],
+        "name": "*"
+      },
+      "default": {
+        "id": "./src/NoteEditor.client.js",
+        "chunks": [
+          "vendors~client3",
+          "client3"
+        ],
+        "name": "default"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/SearchField.client.js": {
+      "": {
+        "id": "./src/SearchField.client.js",
+        "chunks": [
+          "client5"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/SearchField.client.js",
+        "chunks": [
+          "client5"
+        ],
+        "name": "*"
+      },
+      "default": {
+        "id": "./src/SearchField.client.js",
+        "chunks": [
+          "client5"
+        ],
+        "name": "default"
+      }
+    },
+    "file:///Users/mbc/programming/js/react-sc-from-scratch/src/SidebarNote.client.js": {
+      "": {
+        "id": "./src/SidebarNote.client.js",
+        "chunks": [
+          "client6"
+        ],
+        "name": ""
+      },
+      "*": {
+        "id": "./src/SidebarNote.client.js",
+        "chunks": [
+          "client6"
+        ],
+        "name": "*"
+      },
+      "default": {
+        "id": "./src/SidebarNote.client.js",
+        "chunks": [
+          "client6"
+        ],
+        "name": "default"
+      }
+    }
+  }

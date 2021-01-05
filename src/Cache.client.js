@@ -6,7 +6,7 @@
  *
  */
 
-import {unstable_getCacheForType, unstable_useCacheRefresh} from 'react';
+import React, {unstable_getCacheForType, unstable_useCacheRefresh} from 'react';
 import {createFromFetch} from 'react-server-dom-webpack';
 
 function createResponseCache() {
@@ -20,15 +20,15 @@ export function useRefresh() {
   };
 }
 
-export function useServerResponse(props) {
-  const key = JSON.stringify(props);
+export function useServerResponse(location) {
+  const key = JSON.stringify(location);
   const cache = unstable_getCacheForType(createResponseCache);
   let response = cache.get(key);
   if (response) {
     return response;
   }
   response = createFromFetch(
-    fetch('/.netlify/functions/server?props=' + encodeURIComponent(key))
+    fetch('/.netlify/functions/server?location=' + encodeURIComponent(key))
   );
   cache.set(key, response);
   return response;
